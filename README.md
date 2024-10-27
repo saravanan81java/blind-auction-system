@@ -30,12 +30,16 @@ root
 # Run the Services
 
 1) Start the user-service:
+    ```
     cd user-service
     mvn spring-boot:run
-
+    ```
+    
 2) Start the auction-service:
+    ```
     cd ../auction-service
     mvn spring-boot:run
+    ```
 
 Now, both services are up and running. You can interact with the API endpoints (e.g., /auctions/ping, /users/ping, /users/validate) using tools like Postman or curl.
 
