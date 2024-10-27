@@ -3,29 +3,26 @@ Blind auction system
 
 # Project Folder Structure
 root
-│
-├── user-service
-│   ├── src
-│   │   └── main
-│   │       └── java/com/yourcompany/users
-│   │           └── UserController.java
-│   │           └── User.java
-│   │           └── UserRepository.java
-│   └── pom.xml
-│
-├── auction-service
-│   ├── src
-│   │   └── main
-│   │       └── java/com/yourcompany/auctions
-│   │           └── AuctionController.java
-│   │           └── Auction.java
-│   │           └── Product.java
-│   │           └── Bid.java
-│   │           └── AuctionRepository.java
-│   │           └── BidRepository.java
-│   └── pom.xml
-│
-└── pom.xml
+    - user-service
+        - src
+            - main
+                - java/com/yourcompany/users
+                    ─ UserController.java
+                    ─ User.java
+                    ─ UserRepository.java
+        ─ pom.xml
+    ─ auction-service
+        ─ src
+            ─ main
+                ─ java/com/yourcompany/auctions
+                ─ AuctionController.java
+                ─ Auction.java
+                ─ Product.java
+                ─ Bid.java
+                ─ AuctionRepository.java
+                ─ BidRepository.java
+        ─ pom.xml
+    ─ pom.xml
 
 
 API Details and Endpoints explanation:
