@@ -4,16 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>com.explore</groupId>
-	<artifactId>blind-auction-system</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>blind-auction-system</name>
-	<description>Demo project for Spring Boot Blind Auction System</description>
+		<artifactId>blind-auction-system</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<name>blind-auction-system</name>
+		<description>Demo project for Spring Boot Blind Auction System</description>
 	<packaging>pom</packaging>
 	
 	<modules>
-        <module>user-service</module>
-        <module>auction-service</module>
-    </modules> 	 
+        	<module>user-service</module>
+        	<module>auction-service</module>
+    	</modules> 	 
     
 	<properties>
 		<java.version>17</java.version>
