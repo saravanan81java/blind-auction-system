@@ -1,5 +1,4 @@
-# blind-auction-system
-Blind auction system
+# Blind auction system
 
 # Project Folder Structure
 ```
