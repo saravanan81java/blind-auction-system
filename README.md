@@ -1,6 +1,6 @@
 # Blind auction system
 
-# Project Folder Structure
+# Project Structure
 ```
 root
 ├── user-service
