@@ -19,20 +19,20 @@ import com.explore.auction.service.services.AuctionService;
 @RestController
 @RequestMapping("/auctions")
 public class AuctionController {
-	
-	@Autowired
-	private AuctionService auctionService;
 
-	@GetMapping("/ping")
-	public String getPing() {
-		return "Hello Auction Service!!!";
-	}
+    @Autowired
+    private AuctionService auctionService;
 
-	@PostMapping
+    @GetMapping("/ping")
+    public String getPing() {
+        return "Hello Auction Service!!!";
+    }
+
+    @PostMapping("register")
     public ResponseEntity<Auction> createAuction(@RequestBody Auction auction, @RequestHeader("Seller-Token") String sellerToken) {
         return ResponseEntity.ok(auctionService.createAuction(auction, sellerToken));
     }
-    
+
     @PostMapping("/{auctionId}/bid")
     public ResponseEntity<Bid> placeBid(@PathVariable Long auctionId, @RequestBody Bid bid, @RequestHeader("Buyer-Token") String buyerToken) {
         return ResponseEntity.ok(auctionService.placeBid(auctionId, bid, buyerToken));
@@ -43,7 +43,7 @@ public class AuctionController {
         return ResponseEntity.ok(auctionService.endAuction(auctionId));
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public List<Auction> listAuctions() {
         return auctionService.getAllAuctions();
     }
