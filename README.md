@@ -57,16 +57,11 @@ API Details and Endpoints explanation:
     - Calls the User Service to validate user tokens by role type (buyer or seller).
     - Throws an error if the token is invalid or the validation service fails.
  
-# Auctions Endpoints 
-    - /auctions/register
-        Creates a new auction with a seller’s token and minimum bid requirement.
-    - /auctions/list
-        Lists all open auctions.
-    - /auctions/{auctionId}/bid
-        Places a bid on an auction if the bid meets the minimum amount and the auction is open.
-    - /auctions/{auctionId}/end
-        Closes the auction and returns the winning bid, if any. 
-        The first highest bid in descending order is considered the winner.
+6) Auctions Endpoints 
+    - /auctions/register : Creates a new auction with a seller’s token and minimum bid requirement.
+    - /auctions/list : Lists all open auctions.
+    - /auctions/{auctionId}/bid : Places a bid on an auction if the bid meets the minimum amount and the auction is open.
+    - /auctions/{auctionId}/end : Closes the auction and returns the winning bid, if any. The first highest bid in descending order is considered the winner.
 
 Notes
     - The RestTemplate in validateUserToken simulates a call to the UserService to verify tokens.
