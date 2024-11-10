@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  auction-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-auction-service  # Name of the Dockerfile for auction-service
+    ports:
+      - "8082:8082"
+    networks:
+      - auction_network
+
+  user-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-user-service  # Name of the Dockerfile for user-service
+    ports:
+      - "8083:8083"
+    networks:
+      - auction_network
+
+networks:
+  auction_network:
+    driver: bridge
