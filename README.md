@@ -112,8 +112,21 @@ Notes
 
 # Sample Data Pre-population
 To pre-populate the database, Add a CommandLineRunner bean to insert sample users when the application starts:
-
+-User Service
     @Bean
     CommandLineRunner initDatabase(UserRepository userRepository) { 
 
     }
+-Auction Service
+    @Bean
+    CommandLineRunner initDatabase(ProductRepository productRepository, AuctionRepository auctionRepository) {
+		return args -> {
+			
+			List<Product> listOfProducts = new ArrayList<>();
+			.....
+			productRepository.saveAll(listOfProducts); 
+			
+			auctionRepository.save(new Auction(....));
+		};
+	}
+
