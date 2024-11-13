@@ -24,9 +24,13 @@ public class UserController {
 	}
 	
 	@PostMapping("/validate")
-    public ResponseEntity<User> validateToken(@RequestHeader("User-Token") String token) {
-        User user = userService.validateToken(token);
-        return ResponseEntity.ok(user);
+    public ResponseEntity<String> validateToken(@RequestHeader("User-Token") String token) {
+        String reponse = "Valid User";
+		User user = userService.validateToken(token);
+        if(user == null) {
+        	reponse = "Invalid User";
+        } 
+        return ResponseEntity.ok(reponse);
     }
 
 }

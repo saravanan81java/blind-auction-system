@@ -4,17 +4,19 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "auction")
 public class Auction {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 	
     private String productDescription;
@@ -29,8 +31,20 @@ public class Auction {
     private String sellerToken;
     private String status = "OPEN";  // Status can be "OPEN" or "CLOSED"
 
-    @OneToMany(mappedBy = "auction", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "auction", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Bid> bids;
+    
+    public Auction() {
+		// TODO Auto-generated constructor stub
+	}
+    
+    
+    public Auction(String productDescription, double minBidPrice, String sellerToken) {
+		this.productDescription = productDescription;
+		this.minBidPrice = minBidPrice;
+		this.sellerToken = sellerToken;
+	}
+    
 
 	public Long getId() {
 		return id;

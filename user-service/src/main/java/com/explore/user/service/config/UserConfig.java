@@ -9,7 +9,7 @@ import com.explore.user.service.repository.UserRepository;
 
 @Configuration
 public class UserConfig {
-	/*
+	
 	@Bean
     CommandLineRunner initDatabase(UserRepository userRepository) {
         return args -> {
@@ -18,5 +18,5 @@ public class UserConfig {
             userRepository.save(new User("buyer-token-789", "buyer"));
         };
     }
-	 */
+	 
 }
