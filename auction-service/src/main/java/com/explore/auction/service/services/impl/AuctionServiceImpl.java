@@ -24,11 +24,15 @@ import auctionService.BidDTO;
 @Service
 public class AuctionServiceImpl implements AuctionService{
 	
-	@Autowired
     private AuctionRepository auctionRepository;
 
-    @Autowired
     private BidRepository bidRepository;
+    
+    @Autowired  // Its optional @Autowired annotation default Spring will automatically detect and Constructor injection
+    public AuctionServiceImpl(AuctionRepository auctionRepository, BidRepository bidRepository) {
+    	this.auctionRepository = auctionRepository;
+    	this.bidRepository=  bidRepository;
+	}
     
     private final RestTemplate restTemplate = new RestTemplate();
 

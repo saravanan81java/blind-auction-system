@@ -23,9 +23,14 @@ import auctionService.BidDTO;
 @RequestMapping("/auctions")
 public class AuctionController {
 
-    @Autowired
+   
     private AuctionService auctionService;
-
+   
+    @Autowired
+    public AuctionController(AuctionService auctionService) {
+    	this.auctionService = auctionService;
+	}
+    
     @GetMapping("/ping")
     public String getPing() {
         return "Hello Auction Service!!!";
