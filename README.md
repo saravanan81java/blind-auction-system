@@ -1,6 +1,9 @@
 # Blind auction system
 
 # Project Basic Structure
+The folder structure of the Blind Auction System repository is as follows:
+
+
 ```
 root
 ├── user-service
@@ -28,6 +31,7 @@ root
 │
 └── pom.xml
 ```
+This structure includes two services: user-service and auction-service, each with its respective Java files and Maven configuration (pom.xml).
 
 # Run the Services
 
