@@ -2,3 +2,4 @@
 .project
 .settings/org.eclipse.m2e.core.prefs
 auction-service/.DS_Store
+.DS_Store
