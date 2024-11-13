@@ -1,6 +1,6 @@
 # Blind auction system
 
-# Project Structure
+# Project Basic Structure
 ```
 root
 ├── user-service
@@ -17,11 +17,13 @@ root
 │   │   └── main
 │   │       └── java/com/yourcompany/auctions
 │   │           └── AuctionController.java
+│   │           └── ProductController.java
 │   │           └── Auction.java
 │   │           └── Product.java
 │   │           └── Bid.java
 │   │           └── AuctionRepository.java
 │   │           └── BidRepository.java
+│   │           └── ProductRepository.java
 │   └── pom.xml
 │
 └── pom.xml
@@ -72,12 +74,17 @@ API Details and Endpoints explanation:
     - Calls the User Service to validate user tokens by role type (buyer or seller).
     - Throws an error if the token is invalid or the validation service fails.
  
-6) Auctions Endpoints 
+6) Auctions Endpoints:
+   
     - /auctions/register : Creates a new auction with a seller’s token and minimum bid requirement.
     - /auctions/list : Lists all open auctions.
     - /auctions/{auctionId}/bid : Places a bid on an auction if the bid meets the minimum amount and the auction is open.
     - /auctions/{auctionId}/end : Closes the auction and returns the winning bid, if any. The first highest bid in descending order is considered the winner.
 
+8) getAllProducts:
+   
+    - Returns a list of all products.
+      
 Notes
     - The RestTemplate in validateUserToken simulates a call to the UserService to verify tokens.
     - Error Handling: Error messages are thrown if auction or bid validation fails.
