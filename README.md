@@ -142,3 +142,21 @@ To pre-populate the database, Add a CommandLineRunner bean to insert sample user
 	}
 
 # Test Cases 
+User service API endpoints JUnit Test cases
+
+  - testGetPing(): Validates that the /ping endpoint returns the expected string.
+  - testValidateToken_ValidUser(): Mocks a valid user return from userService.validateToken() and checks if the response is "Valid User".
+  - testValidateToken_InvalidUser(): Mocks a null return from userService.validateToken() and verifies that the response is "Invalid User".
+
+Make sure JUnit and Mockito dependencies to successfully execute these tests.
+
+User service services layer JUnit Test cases
+
+  - testValidateToken_Valid(): Verifies that a valid token returns a non-null user.
+  - testValidateToken_Invalid(): Tests that an invalid token throws a RuntimeException with the message "Invalid token".
+
+This structure uses Mockito to mock the UserRepository and validate the behavior of validateToken().
+
+Auction service API endpoints JUnit Test cases
+...
+
