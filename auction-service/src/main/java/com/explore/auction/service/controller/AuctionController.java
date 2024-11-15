@@ -42,7 +42,7 @@ public class AuctionController {
     }
 
     @PostMapping("/{auctionId}/bid")
-    public ResponseEntity<BidDTO> placeBid(@PathVariable Long auctionId, @RequestBody Bid bid, @RequestHeader("Buyer-Token") String buyerToken) {
+    public ResponseEntity<BidDTO> placeBid(@PathVariable long auctionId, @RequestBody Bid bid, @RequestHeader("Buyer-Token") String buyerToken) {
     	return ResponseEntity.ok(auctionService.placeBid(auctionId, bid, buyerToken));
     }
 

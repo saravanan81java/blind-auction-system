@@ -44,6 +44,7 @@ public class AuctionServiceImpl implements AuctionService{
 		validateUserToken(sellerToken, "seller");
 
         auction.setSellerToken(sellerToken);
+        auctionRepository.save(auction);
         return auctionRepository.save(auction);
 	}
 
@@ -72,7 +73,9 @@ public class AuctionServiceImpl implements AuctionService{
 
         bid.setBuyerToken(buyerToken);
         bid.setAuction(auction);
+        
         BidDTO dto = convertBidDTO(bidRepository.save(bid));
+        
         return dto;
 	}
 	
