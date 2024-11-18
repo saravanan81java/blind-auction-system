@@ -128,7 +128,6 @@ public class AuctionServiceImpl implements AuctionService{
         	 
             // Create an HttpEntity with headers
             HttpEntity<String> entity = new HttpEntity<>(headers);
-
             
             ResponseEntity<String> response = restTemplate.exchange(
                     USER_SERVICE_URL + "?type=" + userType,

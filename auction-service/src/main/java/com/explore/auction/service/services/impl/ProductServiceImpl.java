@@ -14,7 +14,7 @@ public class ProductServiceImpl implements ProductService{
 
 	private ProductRepository productRepository;
 	
-	@Autowired
+	@Autowired  // Its optional @Autowired annotation default Spring will automatically detect and Constructor injection
 	public ProductServiceImpl(ProductRepository productRepository) {
 		this.productRepository = productRepository;
 	}

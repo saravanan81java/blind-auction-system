@@ -9,8 +9,12 @@ import com.explore.user.service.services.UserService;
 @Service
 public class UserServiceImpl implements UserService{
 	
-	@Autowired
     private UserRepository userRepository;
+    
+    @Autowired // Its optional @Autowired annotation default Spring will automatically detect and Constructor injection
+    public UserServiceImpl(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
 
     public User validateToken(String token) {
         return userRepository.findByToken(token).orElseThrow(() -> new RuntimeException("Invalid token"));
