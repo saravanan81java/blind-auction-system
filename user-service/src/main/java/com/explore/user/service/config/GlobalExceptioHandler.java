@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class GlobalExceptioHandler {
-	
 	@ExceptionHandler({Exception.class})
 	public ResponseEntity<Object> handleGlobalException(Exception exception) {
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
